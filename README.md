@@ -5,5 +5,4 @@
 
 Enjoy listening to music ♫•*¨*•.¸¸♪ (^_^♪)
 
-Prewiev:
 ![alt text](https://github.com/SoapOnYourLips/DrrrScripts/blob/main/nnn.PNG)
