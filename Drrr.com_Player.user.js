@@ -4,8 +4,8 @@
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
-// @downloadUrl   https://raw.githubusercontent.com/SoapOnYourLips/DrrrScripts/main/Drrr.com_Player.user.js
-// @updateUrl     https://raw.githubusercontent.com/SoapOnYourLips/DrrrScripts/main/Drrr.com_Player.user.js
+// @downloadUrl   https://raw.githubusercontent.com/SoapOnYourLips/DrrrPlayer/main/Drrr.com_Player.user.js
+// @updateUrl     https://raw.githubusercontent.com/SoapOnYourLips/DrrrPlayer/main/Drrr.com_Player.user.js
 // @match         *://drrr.com/room/*
 // @grant         none
 // ==/UserScript==
