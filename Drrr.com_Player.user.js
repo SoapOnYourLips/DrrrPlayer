@@ -40,23 +40,23 @@
 
         updateTalks();
 
-        setInterval(async() => {
+        setInterval(() => {
 
             updateTalks();
 
             if (json.room.talks[0].type === 'music') {
                 if (musicUrl !== json.room.np.url) {
-                    await musicUrl = json.room.np.url;
+                    musicUrl = json.room.np.url;
 
-                    await ap.list.add({
+                    ap.list.add({
                         name: json.room.np.name,
                         artist: '♫•*¨*•.¸¸♪ (^_^♪)',
                         url: json.room.np.url,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
                     });
 
-                    await ap.skipForward();
-                    await ap.play();
+                    ap.skipForward();
+                    ap.play();
                 }
             }
         }, 2000);
