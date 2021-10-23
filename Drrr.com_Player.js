@@ -4,9 +4,8 @@
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
-// @downloadUrl   https://raw.githubusercontent.com/VkOpt/VkOpt/master/builds/vkopt_script.user.js
+// @downloadUrl   https://raw.githubusercontent.com/SoapOnYourLips/DrrrScripts/main/Drrr.com_Player.js
 // @match         *://drrr.com/room*
-// @run-at        document-start
 // ==/UserScript==
 
 "use strict";
