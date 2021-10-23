@@ -48,15 +48,21 @@
                 if (musicUrl !== json.room.np.url) {
                     musicUrl = json.room.np.url;
 
-                    ap.list.add({
+                    /*ap.list.add({
                         name: json.room.np.name,
                         artist: '♫•*¨*•.¸¸♪ (^_^♪)',
                         url: json.room.np.url,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
-                    });
+                    });*/
 
-                    ap.skipForward();
-                    ap.play();
+                    //ap.skipForward();
+                    ap.play({
+                        name: json.room.np.name,
+                        artist: '♫•*¨*•.¸¸♪ (^_^♪)',
+                        autoplay: true,
+                        url: json.room.np.url,
+                        cover:'https://i.redd.it/nqihs7yeb7261.jpg',
+                    });
                 }
             }
         }, 2000);
