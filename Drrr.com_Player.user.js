@@ -4,11 +4,18 @@
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
-// @downloadUrl   https://raw.githubusercontent.com/SoapOnYourLips/DrrrScripts/main/Drrr.com_Player.js
-// @match         *://drrr.com/room/?id=*
+// @downloadUrl   https://raw.githubusercontent.com/SoapOnYourLips/DrrrScripts/main/Drrr.com_Player.user.js
+// @match         *://drrr.com/room/*
+// @grant         none
 // ==/UserScript==
+/* globals jQuery, $, waitForKeyElements */
 
 (() => {
+
+    let json;
+    let musicUrl;
+    let drrrUrl = 'https://drrr.com/room/?ajax=1&api=json';
+
     $("head")
         .append(`<style>.aplayer-title{color:black}</style>`)
         .append(`<style>.aplayer-list-title{color:black}</style>`)
@@ -16,10 +23,6 @@
         .append(`<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.0/APlayer.min.js"></script>`);
 
     $("body").append(`<div id="aplayer" style="position:fixed;left:0px;bottom:0px;min-width:400px;"></div>`);
-
-    let json;
-    let musicUrl;
-    let drrrUrl = 'https://drrr.com/room/?ajax=1&api=json';
 
     let updateTalks = () => {
         $.ajax({
@@ -72,4 +75,5 @@
         document.getElementById('musicBox').style.display = 'none';
 
     }, 2000);
-)}();
+    
+})();
