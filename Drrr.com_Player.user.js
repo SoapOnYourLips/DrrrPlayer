@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Drrr Player
-// @version       1.0.3
+// @version       1.0.4
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
@@ -54,6 +54,8 @@
                     url: musicUrl,
                     cover:'https://i.redd.it/nqihs7yeb7261.jpg',
                 });
+
+                ap.on('error', () => ap.list.clear());
 
                 ap.skipForward();
                 ap.play();
