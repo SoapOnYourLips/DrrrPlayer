@@ -40,29 +40,23 @@
 
         updateTalks();
 
-        setInterval(() => {
+        setInterval(async() => {
 
             updateTalks();
 
             if (json.room.talks[0].type === 'music') {
                 if (musicUrl !== json.room.np.url) {
-                    musicUrl = json.room.np.url;
+                    await musicUrl = json.room.np.url;
 
-                    /*ap.list.add({
+                    await ap.list.add({
                         name: json.room.np.name,
                         artist: '♫•*¨*•.¸¸♪ (^_^♪)',
-                        url: json.room.np.url,
-                        cover:'https://i.redd.it/nqihs7yeb7261.jpg',
-                    });*/
-
-                    //ap.skipForward();
-                    ap.play({
-                        name: json.room.np.name,
-                        artist: '♫•*¨*•.¸¸♪ (^_^♪)',
-                        autoplay: true,
                         url: json.room.np.url,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
                     });
+
+                    await ap.skipForward();
+                    await ap.play();
                 }
             }
         }, 2000);
