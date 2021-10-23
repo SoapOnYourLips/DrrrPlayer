@@ -5,7 +5,8 @@
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
 // @downloadUrl   https://raw.githubusercontent.com/VkOpt/VkOpt/master/builds/vkopt_script.user.js
-// @match       *://drrr.com/room*
+// @match         *://drrr.com/room*
+// @run-at        document-start
 // ==/UserScript==
 
 "use strict";
