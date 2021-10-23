@@ -53,6 +53,7 @@ setTimeout(() => {
         loop: 'none',
         theme: '#3E3E44F0',
         lrcType: 0,
+        volume: 0.2,
         audio: []
     });
 
