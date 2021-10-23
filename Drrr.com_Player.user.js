@@ -45,20 +45,22 @@
 
             updateTalks();
 
-            if (musicUrl !== room.np.url) {
-                musicUrl = room.np.url;
+            if (room.np) {
+                if (musicUrl !== room.np.url) {
+                    musicUrl = room.np.url;
                 
-                ap.list.add({
-                    name: room.np.name,
-                    artist: '♫•*¨*•.¸¸♪ (^_^♪)',
-                    url: musicUrl,
-                    cover:'https://i.redd.it/nqihs7yeb7261.jpg',
-                });
+                    ap.list.add({
+                        name: room.np.name,
+                        artist: '♫•*¨*•.¸¸♪ (^_^♪)',
+                        url: musicUrl,
+                        cover:'https://i.redd.it/nqihs7yeb7261.jpg',
+                    });
 
-                ap.on('error', () => ap.list.clear());
+                    ap.on('error', () => ap.list.clear());
 
-                ap.skipForward();
-                ap.play();
+                    ap.skipForward();
+                    ap.play();
+                }
             }
         
         }, 2000);
