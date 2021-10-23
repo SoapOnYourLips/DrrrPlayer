@@ -8,6 +8,8 @@
 // @match         *://drrr.com/room*
 // ==/UserScript==
 
+"use strict";
+
 (() => {
     $("head")
         .append(`<style>.aplayer-title{color:black}</style>`)
@@ -72,4 +74,4 @@
         document.getElementById('musicBox').style.display = 'none';
 
     }, 2000);
-)}();
+)}());
