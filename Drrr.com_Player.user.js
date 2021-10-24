@@ -55,8 +55,9 @@
                         url: musicUrl,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
                     });
-
+                    
                     ap.on('error', () => ap.list.clear());
+                    ap.on('ended', () => ap.list.clear());
 
                     ap.skipForward();
                     ap.play();
