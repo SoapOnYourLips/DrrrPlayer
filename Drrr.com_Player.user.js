@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Drrr Player
-// @version       1.1.0
+// @version       1.1.1
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
@@ -78,8 +78,7 @@
             ap.play();
         });
         ap.on('error', () => {
-            ap.list.clear();
-            songNumber = 0;
+            ap.list.remove(songNumber);
         });
 
         window.box.changeVolume(0);
