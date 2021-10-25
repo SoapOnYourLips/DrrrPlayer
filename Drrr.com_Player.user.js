@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Drrr Player
-// @version       1.0.7
+// @version       1.0.8
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
@@ -13,6 +13,7 @@
 
 (() => {
 
+    let songNumber = 0;
     let room;
     let musicUrl;
     let drrrUrl = 'https://drrr.com/room/?ajax=1&api=json';
@@ -45,23 +46,23 @@
 
             updateTalks();
 
-            if (room.np) {
+            if (room.talks[0].type === 'music') {
                 if (musicUrl !== room.np.url) {
                     musicUrl = room.np.url;
-                
-                    ap.list.add({
+
+                    ap.list.add([{
                         name: room.np.name,
                         artist: '♫•*¨*•.¸¸♪ (^_^♪)',
                         url: musicUrl,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
-                    });
+                    }]);
+                    ap.list.switch(num);
+                    songNumber++;
 
-                    ap.skipForward();
-                    ap.play();
                 }
             }
-        
-        }, 2000);
+
+        }, 1000);
 
         const ap = new APlayer({
             container: document.getElementById('aplayer'),
@@ -72,9 +73,14 @@
             volume: 0.2,
             audio: []
         });
-        
-        ap.on('error', () => ap.list.clear());
-        ap.on('ended', () => ap.list.clear());
+
+        ap.on('listswitch', () => {
+            ap.play();
+        });
+        ap.on('error', () => {
+            ap.list.clear();
+            songNumber = 0;
+        });
 
         window.box.changeVolume(0);
         document.getElementById('musicBox').style.display = 'none';
