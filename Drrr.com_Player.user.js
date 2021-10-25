@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          Drrr Player
-// @version       1.0.8
+// @version       1.0.9
 // @author        Astro
 // @namespace     https://github.com/SoapOnYourLips
 // @description   Another player for drrr.com chat
@@ -46,23 +46,23 @@
 
             updateTalks();
 
-            if (room.talks[0].type === 'music') {
+            if (room.np) {
                 if (musicUrl !== room.np.url) {
                     musicUrl = room.np.url;
-
+                    
                     ap.list.add([{
                         name: room.np.name,
                         artist: '♫•*¨*•.¸¸♪ (^_^♪)',
                         url: musicUrl,
                         cover:'https://i.redd.it/nqihs7yeb7261.jpg',
                     }]);
+                    
                     ap.list.switch(num);
                     songNumber++;
-
                 }
             }
 
-        }, 1000);
+        }, 2000);
 
         const ap = new APlayer({
             container: document.getElementById('aplayer'),
