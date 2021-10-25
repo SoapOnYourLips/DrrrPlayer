@@ -79,6 +79,7 @@
         });
         ap.on('error', () => {
             ap.list.remove(songNumber);
+            songNumber--;
         });
 
         window.box.changeVolume(0);
